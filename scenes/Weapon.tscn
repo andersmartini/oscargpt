@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://ddxsnhl6nuv16"]
+
+[ext_resource type="Texture2D" uid="uid://7lnoyamh8wc8" path="res://assets/deagle1.png" id="1_31fvv"]
+[ext_resource type="Script" path="res://scenes/attack.gd" id="2_mnd1a"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_leswy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_31fvv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Weapon" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-66, -30)
+scale = Vector2(0.871094, 0.941406)
+sprite_frames = SubResource("SpriteFrames_leswy")
+script = ExtResource("2_mnd1a")

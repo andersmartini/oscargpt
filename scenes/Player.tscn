@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://xsxcl55r3yey"]
+[gd_scene load_steps=7 format=3 uid="uid://xsxcl55r3yey"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_25sct"]
 [ext_resource type="Texture2D" uid="uid://c7unp1m0qtgn8" path="res://assets/charactersprite.png" id="2_v4sme"]
+[ext_resource type="Script" path="res://scenes/animated_sprite_2d.gd" id="3_5svx6"]
+[ext_resource type="PackedScene" uid="uid://ddxsnhl6nuv16" path="res://scenes/Weapon.tscn" id="4_ockyb"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rug1p"]
 
@@ -26,3 +28,9 @@ shape = SubResource("CapsuleShape2D_rug1p")
 position = Vector2(0.999992, -1.00001)
 scale = Vector2(0.371094, 0.328125)
 sprite_frames = SubResource("SpriteFrames_eiqmt")
+frame_progress = 0.580866
+script = ExtResource("3_5svx6")
+
+[node name="Weapon" parent="." instance=ExtResource("4_ockyb")]
+position = Vector2(-17, 1)
+scale = Vector2(0.03, 0.03)
