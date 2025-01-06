@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3d8i0gmtk75m"
-path="res://.godot/imported/desert.png-0870476cee0694d56d6d807954c105dd.ctex"
+uid="uid://316spsjmkywl"
+path="res://.godot/imported/grassy_platforms.webp-84773382daac3e97a3486fef3bd26989.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/desert.png"
-dest_files=["res://.godot/imported/desert.png-0870476cee0694d56d6d807954c105dd.ctex"]
+source_file="res://assets/grassy_platforms.webp"
+dest_files=["res://.godot/imported/grassy_platforms.webp-84773382daac3e97a3486fef3bd26989.ctex"]
 
 [params]
 
