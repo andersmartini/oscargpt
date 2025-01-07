@@ -8,6 +8,6 @@ func attack(target_position: Vector2) -> void:
 		get_parent().add_child(bullet)
 		bullet.global_position = global_position
 		bullet.look_at(target_position)
-		print("Bullet fired towards: ", target_position)
+		print("Bullet fired towards:", target_position)
 	else:
-		print("Bullet scene not assigned!")
+		print("Bullet scene is not assigned!")
