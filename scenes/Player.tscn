@@ -2,8 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_25sct"]
 [ext_resource type="Texture2D" uid="uid://c7unp1m0qtgn8" path="res://assets/charactersprite.png" id="2_v4sme"]
-[ext_resource type="Script" path="res://scenes/animated_sprite_2d.gd" id="3_5svx6"]
-[ext_resource type="PackedScene" path="res://scenes/Weapon.tscn" id="4_ockyb"]
+[ext_resource type="PackedScene" uid="uid://ddxsnhl6nuv16" path="res://scenes/Weapon.tscn" id="4_ockyb"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rug1p"]
 
@@ -18,6 +17,27 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="GDScript" id="GDScript_fnjo4"]
+script/source = "extends AnimatedSprite2D
+
+@onready var weapon = $Weapon  # Adjust the path if the weapon is nested differently
+
+func _ready() -> void:
+	if weapon:
+		print(\"Weapon is attached to the character.\")
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed(\"attack\"):  # Replace \"attack\" with your actual input action
+		weapon.attack(get_global_mouse_position())  # Trigger weapon's attack
+
+var weapon_scene = preload(\"res://scenes/Weapon.tscn\")  # Update the path to match the actual location of your weapon scene
+
+func add_weapon():
+	var weapon_instance = weapon_scene.instantiate()
+	add_child(weapon_instance)
+	weapon_instance.position = Vector2(0, 0)  # Adjust position as needed
+"
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_25sct")
 
@@ -29,7 +49,7 @@ position = Vector2(0.999992, -1.00001)
 scale = Vector2(0.371094, 0.328125)
 sprite_frames = SubResource("SpriteFrames_eiqmt")
 frame_progress = 0.580866
-script = ExtResource("3_5svx6")
+script = SubResource("GDScript_fnjo4")
 
 [node name="Weapon" parent="." instance=ExtResource("4_ockyb")]
 position = Vector2(-17, 1)
